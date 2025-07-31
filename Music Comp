@@ -1,0 +1,218 @@
+Sure! Here’s a step-by-step guide to help you set up your music production website using the provided HTML and CSS code:
+
+### Step 1: Prepare Your Files
+
+1. **Create a Project Folder**  
+   Create a new folder on your computer where you will store all your website files. You can name it something like "MusicProductionWebsite."
+
+2. **Create Subfolders**  
+   Inside the project folder, create two subfolders:
+   - `css` (for your CSS file)
+   - `assets` (for images and icons)
+   - `audio` (for your audio files)
+
+### Step 2: Create HTML and CSS Files
+
+1. **Create the HTML File**  
+   Inside your project folder, create a file named `index.html`. Copy and paste the following code into it:
+
+   ```html
+   <!DOCTYPE html>
+   <html lang="en">
+   <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width,initial-scale=1">
+     <title>Jane Smith • Music Producer & Studio</title>
+     <meta name="description" content="Jane Smith is an award-winning music producer offering mixing, mastering & sound design services. Listen to her latest tracks and book a session today.">
+     <meta name="keywords" content="music producer, mixing, mastering, sound design, Jane Smith studio">
+     <link rel="stylesheet" href="css/style.css">
+     <meta property="og:title" content="Jane Smith • Music Producer">
+     <meta property="og:description" content="Top-tier mixing, mastering & production services. Hear new releases & book now.">
+     <meta property="og:image" content="https://yourdomain.com/assets/hero.jpg">
+     <meta property="og:url" content="https://yourdomain.com">
+   </head>
+   <body>
+
+     <header class="site-header">
+       <div class="container">
+         <a href="/" class="logo"><img src="assets/logo.png" alt="Jane Smith Studio logo"></a>
+         <nav class="nav">
+           <a href="#about">About</a>
+           <a href="#tracks">Tracks</a>
+           <a href="#services">Services</a>
+           <a href="#contact" class="btn">Contact</a>
+         </nav>
+         <button class="nav-toggle" aria-label="open menu">&#9776;</button>
+       </div>
+     </header>
+
+     <section id="hero" class="hero">
+       <div class="container hero-content">
+         <h1>Crafting Soundscapes That Move You</h1>
+         <p>Award-winning producer specializing in electronic, pop & cinematic sound design.</p>
+         <a href="#tracks" class="btn-primary">Listen Now</a>
+       </div>
+       <figure class="hero-image">
+         <img src="assets/hero.jpg" alt="Jane Smith in the studio">
+       </figure>
+     </section>
+
+     <section id="about" class="about container">
+       <h2>About Jane</h2>
+       <p>With over 12 years of experience, Jane has partnered with international artists to produce chart-topping tracks and immersive film scores. Her signature approach blends cutting-edge technology with organic musicality.</p>
+       <a href="/about.html" class="link-inline">Learn more →</a>
+     </section>
+
+     <section id="tracks" class="tracks container">
+       <h2>Featured Tracks</h2>
+       <div class="audio-list">
+         <audio controls>
+           <source src="audio/track1.mp3" type="audio/mpeg">
+           Your browser doesn’t support audio playback.
+         </audio>
+         <audio controls>
+           <source src="audio/track2.mp3" type="audio/mpeg">
+           Your browser doesn’t support audio playback.
+         </audio>
+       </div>
+     </section>
+
+     <section id="services" class="services container">
+       <h2>Services</h2>
+       <div class="service-grid">
+         <div class="service-item">
+           <img src="assets/icons/mixing.svg" alt="Mixing">
+           <h3>Mixing</h3>
+           <p>Precision mixing to bring clarity, depth & punch to your tracks.</p>
+         </div>
+         <div class="service-item">
+           <img src="assets/icons/mastering.svg" alt="Mastering">
+           <h3>Mastering</h3>
+           <p>Polished, radio-ready masters optimized for all platforms.</p>
+         </div>
+         <div class="service-item">
+           <img src="assets/icons/sound-design.svg" alt="Sound Design">
+           <h3>Sound Design</h3>
+           <p>Custom soundscapes & FX to elevate your project.</p>
+         </div>
+       </div>
+       <a href="/services.html" class="link-inline">View all services →</a>
+     </section>
+
+     <section id="contact" class="contact container">
+       <h2>Get in Touch</h2>
+       <form action="/contact-submit" method="post" class="contact-form">
+         <input type="text" name="name" placeholder="Your name" required>
+         <input type="email" name="email" placeholder="Your email" required>
+         <textarea name="message" rows="4" placeholder="Your message" required></textarea>
+         <button type="submit" class="btn-primary">Send Message</button>
+       </form>
+       <div class="social">
+         <a href="#"><img src="assets/icons/ig.svg" alt="Instagram"></a>
+         <a href="#"><img src="assets/icons/fb.svg" alt="Facebook"></a>
+         <a href="#"><img src="assets/icons/sc.svg" alt="SoundCloud"></a>
+       </div>
+     </section>
+
+     <footer class="site-footer">
+       <div class="container">
+         <p>© 2025 Jane Smith Studio. All rights reserved.</p>
+         <nav>
+           <a href="/privacy.html">Privacy Policy</a> | 
+           <a href="/terms.html">Terms of Service</a>
+         </nav>
+       </div>
+     </footer>
+
+     <script>
+       // Simple mobile nav toggle
+       const btn = document.querySelector('.nav-toggle');
+       const nav = document.querySelector('.nav');
+       btn.addEventListener('click', () => nav.classList.toggle('nav-open'));
+     </script>
+   </body>
+   </html>
+   ```
+
+2. **Create the CSS File**  
+   Inside the `css` folder, create a file named `style.css`. Copy and paste the following code into it:
+
+   ```css
+   /* Reset & base */
+   * { margin:0; padding:0; box-sizing:border-box; }
+   body { font-family: 'Helvetica Neue', Arial, sans-serif; line-height:1.6; color:#222; }
+   .container { width:90%; max-width:1080px; margin:0 auto; }
+
+   /* Utility */
+   .btn, .btn-primary {
+     display:inline-block; text-decoration:none; border:none; cursor:pointer;
+     font-weight:600; border-radius:4px;
+   }
+   .btn { background:#444; color:#fff; padding:0.5em 1em; }
+   .btn-primary { background:#e34; color:#fff; padding:0.75em 1.5em; }
+   .link-inline { color:#e34; text-decoration:none; font-weight:500; }
+
+   /* Header */
+   .site-header { background:#111; color:#fff; }
+   .site-header .container { display:flex; align-items:center; justify-content:space-between; padding:1em 0; }
+   .logo img { height:40px; }
+   .nav a { margin-left:1.5em; color:#fff; text-decoration:none; }
+
+   /* Hero Section */
+   .hero { display:flex; align-items:center; justify-content:space-between; padding:5em 0; background:#f4f4f4; }
+   .hero-content { max-width:50%; }
+   .hero-image img { max-width:100%; height:auto; }
+
+   /* About, Tracks, Services, Contact Sections */
+   section { padding:3em 0; }
+   h2 { margin-bottom:1em; }
+
+   /* Audio List */
+   .audio-list { margin:1em 0; }
+
+   /* Services */
+   .service-grid { display:grid; grid-template-columns: repeat(3, 1fr); gap:2em; }
+   .service-item { text-align:center; }
+
+   /* Footer */
+   .site-footer { background:#111; color:#fff; padding:2em 0; text-align:center; }
+   ```
+
+### Step 3: Add Assets
+
+1. **Images and Icons**  
+   - Place your logo image in the `assets` folder and name it `logo.png`.
+   - Add a hero image named `hero.jpg` to the `assets` folder.
+   - Add your service icons (e.g., `mixing.svg`, `mastering.svg`, `sound-design.svg`) into the `assets/icons` folder.
+
+2. **Audio Files**  
+   - Place your audio files (e.g., `track1.mp3`, `track2.mp3`) into the `audio` folder.
+
+### Step 4: Test Locally
+
+1. **Open Your HTML File**  
+   Open the `index.html` file in your web browser (double-click the file or right-click and choose "Open with" your preferred browser).
+
+2. **Check Functionality**  
+   Ensure the layout looks good, images load correctly, and audio plays as expected. Adjust any styling or content as needed.
+
+### Step 5: Deploy Your Website
+
+1. **Choose a Hosting Provider**  
+   Select a hosting provider (e.g., Netlify, Vercel, GitHub Pages, or a traditional web host like Bluehost).
+
+2. **Upload Your Files**  
+   Follow the hosting provider's instructions to upload your project folder, ensuring the folder structure remains intact.
+
+3. **Test Live**  
+   Access your domain to confirm everything is functioning as intended.
+
+### Step 6: Ongoing Maintenance
+
+1. **Update Content**  
+   Regularly update your featured tracks, services, and any other content to keep the site fresh.
+
+2. **SEO Optimization**  
+   Keep track of your SEO settings and consider adding new blog posts or updates to improve search visibility.
+
+If you have any specific questions or need help with any of these steps, feel free to ask!
